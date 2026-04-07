@@ -131,7 +131,7 @@ const PredictPage = () => {
     e.preventDefault();
     setLoading(true);
     try {
-        const response = await fetch("http://localhost:8000/predict", {
+        const response = await fetch("https://diasense-api.onrender.com/predict", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
@@ -242,7 +242,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
       e.preventDefault();
       try {
-          const res = await fetch("http://localhost:8000/login", {
+          const res = await fetch("https://diasense-api.onrender.com/login", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ login_id: loginId, password })
@@ -311,7 +311,7 @@ const RegisterPage = () => {
           setError("Passwords do not match"); return;
       }
       try {
-          const res = await fetch("http://localhost:8000/register", {
+          const res = await fetch("https://diasense-api.onrender.com/register", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(formData)
@@ -389,7 +389,7 @@ const ForgotPasswordPage = () => {
     const handleVerify = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("http://localhost:8000/forgot-password", {
+            const res = await fetch("https://diasense-api.onrender.com/forgot-password", {
                 method: "POST", headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ recovery_id: recoveryId })
             });
@@ -403,7 +403,7 @@ const ForgotPasswordPage = () => {
     const handleReset = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("http://localhost:8000/reset-password", {
+            const res = await fetch("https://diasense-api.onrender.com/reset-password", {
                 method: "POST", headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ recovery_id: recoveryId, new_password: newPassword })
             });
